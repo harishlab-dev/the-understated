@@ -1,0 +1,1756 @@
+You are a senior creative director, award-winning fashion website designer, senior UX/UI designer, 3D web developer, motion designer, and senior full-stack engineer.
+
+Your task is to DESIGN AND BUILD the complete production-quality website for a premium Indian clothing brand called:
+
+THE UNDERSTATED.
+
+TAGLINE:
+"Luxury, Without the Noise."
+
+IMPORTANT:
+This is NOT a generic clothing template.
+This is NOT a basic SaaS-style landing page.
+This is NOT a simple Shopify clone.
+This should feel like the digital flagship experience of a modern premium fashion/streetwear label.
+
+The final website must be visually impressive, cinematic, interactive, responsive, fast, accessible, and architected so that a complete e-commerce system can be activated later without redesigning the existing website.
+
+==================================================
+1. PROJECT PHASE
+==================================================
+
+We are currently building PHASE 1.
+
+PHASE 1:
+Complete brand website + landing experience + visual identity + storytelling + collection architecture + lookbook + interactive experiences + responsive design + e-commerce-ready UI architecture.
+
+PHASE 2 WILL BE IMPLEMENTED LATER:
+Actual products
+Product database
+Inventory
+Shopping cart functionality
+Checkout
+Payment gateway
+Shipping
+Orders
+Customer accounts
+Returns
+Admin commerce dashboard
+
+DO NOT implement the real payment/checkout/order system yet.
+
+However, create the architecture and reusable components so Phase 2 can be integrated into the existing project without rebuilding the website.
+
+==================================================
+2. BRAND INFORMATION
+==================================================
+
+Brand:
+THE Understated.
+
+Tagline:
+Luxury, Without the Noise.
+
+Positioning:
+Premium
+Minimal
+Streetwear
+Casual
+Unisex
+
+Target audience:
+16–30 years old
+
+Market:
+India
+
+Brand philosophy:
+
+The Understated was built on a simple idea — fashion doesn't have to be loud to make a statement.
+
+The brand creates contemporary clothing for people who express themselves differently. It blends minimal aesthetics, modern streetwear, culture, creativity and individuality.
+
+The collections can include:
+- Everyday essentials
+- Anime-inspired/culture-driven clothing
+- Spidey-themed products
+- Statement pieces
+- Casual streetwear
+
+Core ideas:
+QUALITY
+COMFORT
+INDIVIDUALITY
+ACCESSIBILITY
+CULTURE
+SELF-EXPRESSION
+
+Primary emotional direction:
+
+QUIET CONFIDENCE.
+
+The website should communicate:
+"I don't need to be loud to stand out."
+
+==================================================
+3. ABOUT BRAND COPY
+==================================================
+
+Use this as the primary About content, but improve wording where appropriate without changing the meaning:
+
+"Luxury, without the noise.
+
+The Understated was built on a simple idea — fashion doesn't have to be loud to make a statement.
+
+We create contemporary clothing for people who express themselves differently. Blending minimal aesthetics, modern streetwear and designs inspired by culture, creativity and individuality, our collections are made for everyday life — and everything that happens in between.
+
+From understated essentials to culture-driven pieces and statement graphics, every piece is designed around one belief:
+
+Wear what speaks to you.
+
+Quality. Comfort. Character.
+
+Without the unnecessary noise.
+
+This is The Understated."
+
+You may create shorter variations of this copy for homepage sections.
+
+==================================================
+4. SOCIAL LINKS
+==================================================
+
+Instagram:
+https://www.instagram.com/theunderstated.store
+
+Pinterest:
+https://pin.it/268ORjNRY
+
+Threads:
+https://www.threads.com/@theunderstated.store
+
+WhatsApp Community:
+https://chat.whatsapp.com/Jl8HqZHQ2Aw2pTq0kGm36N
+
+WhatsApp Channel:
+https://whatsapp.com/channel/0029Vb8WOV4KwqSPjEyvmr3j
+
+YouTube:
+https://youtube.com/@theunderstated-r5i
+
+Facebook:
+https://www.facebook.com/share/1DsaSiSDwi/
+
+Use these links appropriately throughout the site.
+
+==================================================
+5. CORE CREATIVE DIRECTION
+==================================================
+
+The website should combine:
+
+QUIET LUXURY
++
+CONTEMPORARY STREETWEAR
++
+EDITORIAL FASHION
++
+CINEMATIC STORYTELLING
++
+SUBTLE INTERACTIVITY
++
+MODERN 3D
+
+Visual inspiration should come from:
+- premium fashion editorials
+- contemporary streetwear campaigns
+- brutalist architecture
+- minimalist luxury brands
+- independent fashion magazines
+- cinematic photography
+- modern digital art
+
+DO NOT copy any existing brand website.
+
+Take inspiration from the design language, but create an original identity for The Understated.
+
+==================================================
+6. VISUAL DESIGN SYSTEM
+==================================================
+
+Primary colors:
+
+Black:
+#000000
+
+White:
+#FFFFFF
+
+Off-white:
+#F4F3EF
+
+Dark charcoal:
+#171717
+
+Use a predominantly monochrome interface.
+
+Collection-specific accent colors may be used very selectively.
+
+Examples:
+Anime/Culture can have subtle accent colors.
+Spidey collection can have controlled red/blue accents.
+
+BUT:
+The core brand UI should remain monochrome and premium.
+
+Avoid:
+- excessive gradients
+- neon SaaS aesthetics
+- excessive glassmorphism
+- childish UI
+- generic purple AI gradients
+- excessive rounded cards
+- excessive shadows
+- unnecessary visual clutter
+
+==================================================
+7. TYPOGRAPHY
+==================================================
+
+Use a premium contemporary sans-serif display font.
+
+Possible choices:
+- Geist
+- Inter
+- Manrope
+- Plus Jakarta Sans
+- another high-quality modern grotesk
+
+Use a distinctive display treatment for major headings.
+
+Optional mono font for small metadata:
+
+DROP 001
+ESSENTIAL / 001
+EST. 2026
+EDITORIAL 01
+
+Typography should be one of the major visual elements.
+
+Use very large editorial headlines.
+
+Example:
+
+LESS NOISE.
+
+MORE YOU.
+
+==================================================
+8. OVERALL EXPERIENCE
+==================================================
+
+The website should feel like:
+
+"A fashion film that happens to be a website."
+
+It should NOT feel like:
+"an online store with a banner."
+
+The visitor journey should be:
+
+OPEN
+↓
+WOW
+↓
+DISCOVER
+↓
+UNDERSTAND THE BRAND
+↓
+EXPLORE COLLECTIONS
+↓
+EXPERIENCE THE VISUAL WORLD
+↓
+LOOKBOOK
+↓
+JOIN THE COMMUNITY
+↓
+COMING SOON
+↓
+RETURN / FOLLOW / WAIT FOR DROP
+
+==================================================
+9. HOMEPAGE
+==================================================
+
+Create a highly cinematic homepage.
+
+The homepage should contain the following major sections.
+
+------------------------------------------
+SECTION 01 — CINEMATIC INTRO
+------------------------------------------
+
+Create a premium opening experience.
+
+The initial screen should be minimal and dark.
+
+Display:
+
+THE
+UNDERSTATED.
+
+Luxury, Without the Noise.
+
+Use subtle animation.
+
+The opening experience should transition into the main website.
+
+If real 3D assets are available, use Three.js / React Three Fiber.
+
+Create a lightweight real-time 3D experience rather than a heavy 3D game.
+
+Possible visual concept:
+
+A minimal floating black fabric/object in a dark environment.
+
+The camera slowly approaches.
+
+Lighting moves across the object.
+
+Subtle particles or atmospheric elements may be used.
+
+Then transition to:
+
+THE UNDERSTATED.
+
+IMPORTANT:
+Do NOT create an ugly or obviously procedural 3D scene.
+
+If a high-quality 3D asset cannot be created automatically, create a sophisticated lightweight 3D environment using geometry, lighting and shaders.
+
+The experience must have a graceful fallback for:
+- mobile
+- low-end devices
+- reduced motion
+- WebGL unavailable
+
+------------------------------------------
+SECTION 02 — HERO
+------------------------------------------
+
+Full viewport.
+
+Large editorial typography.
+
+Headline:
+
+THE UNDERSTATED.
+
+Subheadline:
+
+Luxury, Without the Noise.
+
+Supporting copy:
+
+Contemporary essentials, culture-driven pieces and modern streetwear for those who don't need to be loud to stand out.
+
+Primary CTA:
+
+EXPLORE THE WORLD
+
+Secondary CTA:
+
+OUR STORY
+
+Use cinematic visual treatment.
+
+If no final brand photography exists, use carefully selected temporary editorial imagery.
+
+DO NOT use random generic stock imagery.
+
+Create the design so the temporary imagery can later be replaced easily.
+
+------------------------------------------
+SECTION 03 — BRAND STATEMENT
+------------------------------------------
+
+Huge typography.
+
+LESS NOISE.
+MORE YOU.
+
+Add subtle scroll-based movement.
+
+The typography should dominate the viewport.
+
+Use elegant transitions.
+
+------------------------------------------
+SECTION 04 — CINEMATIC CAMPAIGN
+------------------------------------------
+
+Create a full-width cinematic campaign section.
+
+Use a video placeholder architecture.
+
+The component should support:
+- MP4
+- WebM
+- poster image
+- mobile video
+- desktop video
+
+If no final video is available, use a visually sophisticated placeholder.
+
+Do not make fake video claims.
+
+Structure:
+
+CAMPAIGN 01
+
+THE QUIET CITY
+
+Short editorial description.
+
+CTA:
+DISCOVER
+
+------------------------------------------
+SECTION 05 — THE WORLD OF THE UNDERSTATED
+------------------------------------------
+
+Create four major interactive collection/world cards.
+
+1. EVERYDAY ESSENTIALS
+2. CULTURE
+3. SPIDEY
+4. STATEMENT
+
+Each should occupy significant visual space.
+
+Each card should have:
+- editorial image
+- title
+- short description
+- hover interaction
+- subtle image movement
+- CTA
+
+Example:
+
+EVERYDAY ESSENTIALS
+
+Pieces designed to become part of your everyday.
+
+CULTURE
+
+Stories, characters and worlds translated into something you can wear.
+
+SPIDEY
+
+Energy. Movement. Attitude.
+
+STATEMENT
+
+For when understated doesn't mean invisible.
+
+These are collection placeholders.
+
+DO NOT invent actual products.
+
+------------------------------------------
+SECTION 06 — EDITORIAL STORY
+------------------------------------------
+
+Create a premium fashion editorial layout.
+
+Use asymmetrical image layouts.
+
+Do not use a standard three-column grid.
+
+Use:
+- large images
+- cropped images
+- whitespace
+- overlapping typography
+- subtle parallax
+- masked image reveals
+
+Add text:
+
+"Fashion doesn't have to be loud to make an impression."
+
+------------------------------------------
+SECTION 07 — MANIFESTO
+------------------------------------------
+
+Full-screen dark section.
+
+Display:
+
+FASHION
+DOESN'T HAVE TO
+BE LOUD.
+
+Then:
+
+IT JUST HAS TO
+MEAN SOMETHING.
+
+Then:
+
+WEAR WHAT
+SPEAKS TO YOU.
+
+Animate the typography elegantly as the user scrolls.
+
+------------------------------------------
+SECTION 08 — 3D EXPERIENCE
+------------------------------------------
+
+Create a dedicated interactive 3D section.
+
+Use React Three Fiber / Three.js.
+
+Concept:
+
+A minimal black sculptural/fabric-inspired object floating in space.
+
+User scroll controls camera movement.
+
+At different scroll positions:
+0%:
+object distant
+
+25%:
+camera approaches
+
+50%:
+object rotates
+
+75%:
+lighting changes
+
+100%:
+brand typography appears
+
+THE UNDERSTATED.
+
+The implementation must be optimized.
+
+Use:
+- low-poly geometry where appropriate
+- compressed assets
+- lazy loading
+- device capability detection
+- reduced-motion fallback
+
+Do NOT create a massive scene.
+
+------------------------------------------
+SECTION 09 — LOOKBOOK
+------------------------------------------
+
+Create an editorial lookbook.
+
+Use horizontal scrolling on desktop where appropriate.
+
+Content structure:
+
+LOOKBOOK
+
+01 — THE EVERYDAY
+02 — AFTER DARK
+03 — CULTURE
+04 — THE STATEMENT
+
+Use large photography.
+
+Add subtle hover effects.
+
+Each lookbook item should have:
+- image
+- title
+- number
+- description
+- optional CTA
+
+The lookbook must be easy to replace with real client imagery later.
+
+------------------------------------------
+SECTION 10 — COMING SOON
+------------------------------------------
+
+Because the product catalogue is not ready.
+
+Create a strong "coming soon" section.
+
+Headline:
+
+THE FIRST DROP
+IS COMING.
+
+Copy:
+
+Something worth waiting for.
+
+CTA:
+
+JOIN THE WORLD
+
+Secondary:
+
+FOLLOW THE DROP
+
+Link these to appropriate social/community destinations.
+
+Do NOT fabricate a launch date.
+
+------------------------------------------
+SECTION 11 — COMMUNITY
+------------------------------------------
+
+Create:
+
+STAY UNDERSTATED.
+
+Copy:
+
+New drops.
+New stories.
+Things worth wearing.
+
+Present social/community destinations beautifully.
+
+Instagram
+Pinterest
+Threads
+YouTube
+WhatsApp Community
+WhatsApp Channel
+Facebook
+
+Do not simply display generic social media icons.
+
+Make the section feel like part of the brand.
+
+------------------------------------------
+SECTION 12 — NEWSLETTER / WAITLIST
+------------------------------------------
+
+Create an elegant email capture component.
+
+Headline:
+
+BE FIRST.
+
+Copy:
+
+Get notified when the next chapter begins.
+
+Input:
+Email address
+
+Button:
+JOIN
+
+For Phase 1, this can be a UI-ready component.
+
+If no email backend is configured, do not pretend submissions are being stored.
+
+Implement a clean integration-ready architecture.
+
+------------------------------------------
+SECTION 13 — FOOTER
+------------------------------------------
+
+Minimal premium footer.
+
+THE Understated.
+
+Luxury, Without the Noise.
+
+Navigation:
+
+SHOP
+COLLECTIONS
+LOOKBOOK
+ABOUT
+CONTACT
+FAQ
+SIZE GUIDE
+
+COMMUNITY
+
+Instagram
+Pinterest
+Threads
+YouTube
+WhatsApp
+
+LEGAL
+
+Privacy Policy
+Terms
+Shipping
+Returns
+
+Copyright:
+© 2026 THE UNDERSTATED.
+
+==================================================
+10. REQUIRED PAGES
+==================================================
+
+Build these pages completely:
+
+/
+Home
+
+/about
+About
+
+/collections
+Collections overview
+
+/collections/everyday-essentials
+Everyday Essentials placeholder collection
+
+/collections/culture
+Culture placeholder collection
+
+/collections/spidey
+Spidey placeholder collection
+
+/collections/statement
+Statement placeholder collection
+
+/lookbook
+Lookbook
+
+/contact
+Contact
+
+/faq
+FAQ
+
+/size-guide
+Size Guide
+
+/coming-soon
+Coming Soon
+
+/privacy
+Privacy Policy placeholder structure
+
+/terms
+Terms placeholder structure
+
+/shipping
+Shipping Policy placeholder structure
+
+/returns
+Returns / Refund Policy placeholder structure
+
+/404
+Custom 404 page
+
+==================================================
+11. E-COMMERCE-READY ROUTES
+==================================================
+
+Prepare architecture for:
+
+/shop
+/product/[slug]
+/cart
+/checkout
+/account
+/account/orders
+/account/wishlist
+
+These do not need working commerce functionality in Phase 1.
+
+However:
+- create reusable components
+- create empty states
+- create data structures
+- create product card components
+- create product page template
+- create cart drawer UI
+
+The future product catalogue should plug into the existing components.
+
+==================================================
+12. PRODUCT DATA MODEL
+==================================================
+
+Create a typed product model.
+
+Example fields:
+
+id
+name
+slug
+description
+shortDescription
+price
+mrp
+category
+collection
+sku
+images
+video
+sizes
+colors
+stock
+fabric
+fit
+careInstructions
+tags
+featured
+isNew
+isBestseller
+
+Do not populate it with fake products unless required for UI testing.
+
+If temporary demo data is needed, clearly label it internally as placeholder/demo content.
+
+==================================================
+13. PRODUCT CARD COMPONENT
+==================================================
+
+Create a premium reusable ProductCard.
+
+It should support:
+
+image
+secondary hover image
+product name
+price
+color variants
+wishlist button
+quick view
+collection/category
+new/bestseller badge
+
+Make it compatible with future real product data.
+
+==================================================
+14. PRODUCT PAGE TEMPLATE
+==================================================
+
+Create the full UI.
+
+Layout:
+
+Large image gallery on left.
+
+Information on right.
+
+Product name.
+Price.
+Color.
+Size.
+Size Guide.
+Description.
+Fabric.
+Fit.
+Care.
+Shipping.
+Returns.
+
+Buttons:
+
+ADD TO BAG
+BUY NOW
+
+These buttons can remain disabled or show appropriate "Coming Soon" state during Phase 1.
+
+Below:
+
+YOU MAY ALSO LIKE
+
+Do not implement actual purchase processing yet.
+
+==================================================
+15. CART UI
+==================================================
+
+Create a premium slide-in cart drawer.
+
+Empty state:
+
+YOUR BAG IS EMPTY.
+
+THE NEXT DROP
+IS ALMOST HERE.
+
+Button:
+EXPLORE THE WORLD
+
+The cart architecture should later support:
+- products
+- variants
+- quantities
+- subtotal
+- shipping
+- coupons
+- checkout
+
+==================================================
+16. NAVIGATION
+==================================================
+
+Desktop navigation:
+
+THE Understated.
+
+SHOP
+COLLECTIONS
+LOOKBOOK
+ABOUT
+
+Right:
+
+SEARCH
+WISHLIST
+BAG
+
+Keep it minimal.
+
+The header can change appearance on scroll.
+
+Use transparent navigation over the hero.
+
+Transition to solid/dark navigation after scrolling.
+
+Mobile:
+
+Elegant fullscreen menu.
+
+Menu items should animate in.
+
+==================================================
+17. SEARCH EXPERIENCE
+==================================================
+
+Create a fullscreen/minimal search interface.
+
+Placeholder:
+
+WHAT ARE YOU LOOKING FOR?
+
+Popular:
+
+ESSENTIALS
+CULTURE
+SPIDEY
+STATEMENT
+
+Phase 1 can use placeholder search behavior.
+
+Prepare it for future product search.
+
+==================================================
+18. INTERACTIONS
+==================================================
+
+Implement premium but restrained interactions.
+
+Required:
+
+- smooth page transitions
+- scroll reveals
+- image mask reveals
+- hover image transitions
+- subtle parallax
+- magnetic CTA buttons
+- text reveal animations
+- navigation transitions
+- cart drawer animation
+- fullscreen mobile menu
+- custom desktop cursor where appropriate
+- collection hover interactions
+- lookbook interactions
+- shared transitions where appropriate
+
+DO NOT animate everything.
+
+The brand is "understated".
+
+Motion should feel:
+- slow
+- precise
+- elegant
+- intentional
+
+Avoid:
+- bouncing UI
+- excessive scaling
+- cartoonish effects
+- constant movement
+- distracting particles
+
+==================================================
+19. CURSOR
+==================================================
+
+Create a custom cursor for desktop only.
+
+Normal:
+small minimal cursor
+
+Hovering image:
+VIEW
+
+Hovering collection:
+EXPLORE
+
+Hovering CTA:
+small directional indicator
+
+Disable custom cursor on:
+- mobile
+- touch devices
+- reduced-motion users
+
+==================================================
+20. PAGE TRANSITIONS
+==================================================
+
+Use subtle transitions.
+
+Possible:
+fade
+clip reveal
+opacity
+small vertical movement
+
+Do not make transitions slow enough to hurt usability.
+
+==================================================
+21. RESPONSIVE DESIGN
+==================================================
+
+The website must be fully responsive.
+
+Test:
+
+360px
+390px
+430px
+768px
+1024px
+1280px
+1440px
+1920px
+
+Mobile is NOT a reduced desktop version.
+
+Create a dedicated mobile composition.
+
+Important:
+- simplify 3D
+- reduce animation
+- use mobile video
+- optimize typography
+- preserve visual hierarchy
+- maintain touch-friendly buttons
+- prevent horizontal overflow
+
+==================================================
+22. PERFORMANCE
+==================================================
+
+This is critical.
+
+The website should be visually ambitious without being slow.
+
+Implement:
+
+- lazy loading
+- image optimization
+- WebP/AVIF
+- responsive image sizes
+- video poster images
+- lazy video loading
+- preload only critical assets
+- code splitting
+- dynamic imports for heavy 3D
+- Three.js lazy loading
+- GPU-friendly effects
+- avoid huge textures
+- avoid unnecessarily large videos
+- font optimization
+- caching where appropriate
+
+The 3D section must NOT block initial page load.
+
+The hero must load quickly.
+
+If WebGL is unavailable, use a cinematic image/video fallback.
+
+==================================================
+23. ACCESSIBILITY
+==================================================
+
+Implement:
+
+- semantic HTML
+- keyboard navigation
+- visible focus states
+- alt text
+- aria labels
+- accessible buttons
+- sufficient contrast
+- reduced-motion support
+- no interaction that depends solely on hover
+
+==================================================
+24. SEO
+==================================================
+
+Implement complete foundational SEO.
+
+Brand:
+
+The Understated
+
+Primary tagline:
+
+Luxury, Without the Noise.
+
+Create:
+- metadata
+- title templates
+- descriptions
+- Open Graph metadata
+- Twitter/X metadata
+- sitemap
+- robots.txt
+- canonical URLs
+- structured semantic HTML
+
+Do not keyword-stuff.
+
+==================================================
+25. ANALYTICS READY
+==================================================
+
+Create integration-ready architecture for:
+
+Google Analytics
+Google Search Console
+Meta Pixel
+
+Do not add fake tracking IDs.
+
+Use environment variables/placeholders.
+
+==================================================
+26. CONTACT
+==================================================
+
+Create a premium contact page.
+
+Headline:
+
+LET'S TALK.
+
+Fields:
+
+Name
+Email
+Subject
+Message
+
+Button:
+
+SEND MESSAGE
+
+Also include social/community links.
+
+If no backend/email provider is configured, do not pretend messages are being delivered.
+
+Create integration-ready form architecture.
+
+==================================================
+27. FAQ
+==================================================
+
+Create elegant accordion FAQ UI.
+
+Categories:
+
+ORDERS
+SHIPPING
+SIZING
+PRODUCTS
+PAYMENTS
+RETURNS
+
+Do not invent specific business policies.
+
+Where information has not been provided, use neutral placeholders such as:
+
+"Details coming soon."
+
+==================================================
+28. SIZE GUIDE
+==================================================
+
+Create a professional size-guide layout.
+
+Include:
+
+T-shirts
+Hoodies
+Other categories
+
+Do not invent actual measurements.
+
+Use:
+
+SIZE
+CHEST
+LENGTH
+SHOULDER
+
+with clearly marked placeholder values until the client provides the actual measurements.
+
+==================================================
+29. LEGAL PAGES
+==================================================
+
+Create the page structure but do not invent legal claims.
+
+The client will provide final legal content.
+
+==================================================
+30. BUSINESS MESSAGING
+==================================================
+
+The client has indicated:
+- free shipping
+- "zero tax"
+
+DO NOT make legally definitive claims about tax treatment.
+
+For now, use:
+"Free Shipping"
+
+and leave tax messaging configurable.
+
+Create a reusable announcement bar so business messaging can later be changed without redesigning the header.
+
+Possible current announcement:
+
+FREE SHIPPING • THE FIRST DROP IS COMING
+
+==================================================
+31. IMAGE STRATEGY
+==================================================
+
+The client has not finalized product photography.
+
+Therefore:
+
+DO NOT create fake products and pretend they are real.
+
+Use editorial placeholder imagery for:
+- hero
+- campaign
+- lookbook
+- collection worlds
+
+The imagery should feel like premium fashion photography.
+
+Visual direction:
+- monochrome
+- brutalist
+- urban
+- minimal
+- cinematic
+- contemporary
+- editorial
+- premium streetwear
+
+All temporary imagery should be easy to replace later.
+
+Create centralized asset references.
+
+==================================================
+32. VIDEO STRATEGY
+==================================================
+
+Create a reusable CinematicVideo component supporting:
+
+desktop source
+mobile source
+poster
+autoplay
+loop
+muted
+playsInline
+lazy loading
+
+Do not autoplay audio.
+
+Do not use a huge video that destroys performance.
+
+If a final cinematic video isn't available, build the component with an elegant poster-image fallback.
+
+==================================================
+33. 3D STRATEGY
+==================================================
+
+Use:
+
+Three.js
+React Three Fiber
+@react-three/drei where useful
+
+The 3D should be:
+- elegant
+- lightweight
+- minimal
+- fashion-oriented
+
+Do not create a game.
+
+Do not create a complicated 3D city.
+
+Do not create a generic spinning sphere.
+
+Use an abstract fashion/sculptural concept.
+
+Possible:
+fabric-inspired geometry
+folded cloth
+minimal sculpture
+floating garment-inspired form
+
+Use lighting and camera movement to make it cinematic.
+
+==================================================
+34. TECH STACK
+==================================================
+
+Use:
+
+Next.js
+TypeScript
+React
+Tailwind CSS
+Three.js
+React Three Fiber
+Motion
+
+Prefer modern stable versions.
+
+Use a clean component architecture.
+
+Do not use unnecessary dependencies.
+
+==================================================
+35. CODE QUALITY
+==================================================
+
+The code must be:
+
+- modular
+- readable
+- typed
+- maintainable
+- reusable
+- production-oriented
+
+Avoid:
+- giant components
+- duplicate code
+- hardcoded repeated content
+- inline style chaos
+- unnecessary libraries
+- fake functionality
+
+Create reusable components.
+
+==================================================
+36. COMPONENT SYSTEM
+==================================================
+
+Create reusable components including:
+
+Navbar
+MobileMenu
+Hero
+CinematicIntro
+CinematicVideo
+ThreeScene
+CollectionCard
+CollectionGrid
+EditorialSection
+Manifesto
+Lookbook
+LookbookItem
+ProductCard
+ProductGrid
+ProductPageTemplate
+CartDrawer
+SearchOverlay
+WishlistButton
+MagneticButton
+RevealText
+ImageReveal
+PageTransition
+CommunitySection
+Newsletter
+Footer
+AnnouncementBar
+FAQAccordion
+SizeGuide
+LoadingScreen
+CustomCursor
+NotFound
+
+==================================================
+37. DESIGN TOKENS
+==================================================
+
+Centralize:
+
+colors
+spacing
+typography
+border radius
+shadows
+motion durations
+easing
+
+Do not scatter these throughout the code.
+
+==================================================
+38. MOTION SYSTEM
+==================================================
+
+Create a consistent motion language.
+
+Fast:
+150–250ms
+
+Normal:
+300–500ms
+
+Editorial:
+600–1200ms
+
+Cinematic:
+1000–2000ms where appropriate
+
+Use smooth easing.
+
+Avoid unnecessary animation.
+
+Respect prefers-reduced-motion.
+
+==================================================
+39. LOADING EXPERIENCE
+==================================================
+
+Create a premium loading experience.
+
+Potential:
+
+THE
+UNDERSTATED.
+
+with a minimal progress/reveal animation.
+
+But:
+Do not make the loading screen delay the website unnecessarily.
+
+If assets load quickly, transition immediately.
+
+==================================================
+40. ERROR STATES
+==================================================
+
+Create:
+- 404
+- generic error
+- empty search
+- empty collection
+- unavailable 3D
+- unavailable video
+
+All should feel part of the brand.
+
+==================================================
+41. FUTURE E-COMMERCE ARCHITECTURE
+==================================================
+
+Prepare interfaces/services for future:
+
+ProductService
+CartService
+OrderService
+PaymentService
+ShippingService
+CustomerService
+
+Do not implement actual payment.
+
+Keep the architecture replaceable.
+
+The future flow will be:
+
+PRODUCT
+↓
+PRODUCT PAGE
+↓
+ADD TO BAG
+↓
+CART
+↓
+CHECKOUT
+↓
+PAYMENT GATEWAY
+↓
+PAYMENT VERIFICATION
+↓
+ORDER
+↓
+SHIPPING
+↓
+CUSTOMER NOTIFICATION
+
+Do not implement this now.
+
+==================================================
+42. ADMIN FUTURE ARCHITECTURE
+==================================================
+
+Phase 2 will eventually require:
+
+Dashboard
+Products
+Inventory
+Orders
+Customers
+Collections
+Coupons
+Returns
+Analytics
+Settings
+
+Do not build the complete admin system now.
+
+But ensure the data architecture won't prevent it later.
+
+==================================================
+43. SECURITY
+==================================================
+
+Follow secure development practices.
+
+Never expose:
+- secret API keys
+- payment secrets
+- database service-role keys
+
+Use environment variables.
+
+Validate form input.
+
+Do not put secrets in frontend code.
+
+==================================================
+44. DESIGN QUALITY STANDARD
+==================================================
+
+The website must look custom-designed.
+
+Avoid the visual appearance of:
+- Lovable default
+- Bolt default
+- Vercel template
+- generic Tailwind template
+- Shopify default
+- SaaS landing page
+
+Every major section should have a deliberate visual concept.
+
+Whitespace is important.
+
+Typography is important.
+
+Image composition is important.
+
+Motion should be intentional.
+
+==================================================
+45. IMPORTANT CLIENT EXPERIENCE
+==================================================
+
+When the client opens the website, the first impression should communicate:
+
+PREMIUM
+MODERN
+CINEMATIC
+CREATIVE
+STREETWEAR
+MINIMAL
+CONFIDENT
+
+The client should feel that this is a serious fashion brand website, not a student project or AI-generated template.
+
+==================================================
+46. DO NOT INVENT BUSINESS INFORMATION
+==================================================
+
+Do not invent:
+- product names
+- prices
+- stock
+- GST numbers
+- addresses
+- phone numbers
+- shipping times
+- return policies
+- launch dates
+- payment gateways
+- customer reviews
+- customer counts
+- sales numbers
+- awards
+- brand history not provided
+
+Use placeholders or "Coming Soon" when information is missing.
+
+==================================================
+47. IMPLEMENTATION STRATEGY
+==================================================
+
+Do not stop after generating a plan.
+
+Actually build the application.
+
+First:
+inspect the current project.
+
+Then:
+create/update the architecture.
+
+Then:
+implement the design.
+
+Then:
+run the application.
+
+Then:
+test every route.
+
+Then:
+test desktop and mobile.
+
+Then:
+fix layout issues.
+
+Then:
+fix TypeScript errors.
+
+Then:
+fix build errors.
+
+Then:
+optimize performance.
+
+Then:
+review the website visually.
+
+Then:
+iterate until it feels polished.
+
+==================================================
+48. SELF-REVIEW
+==================================================
+
+After implementation, perform a critical design review.
+
+Check:
+
+1. Does it look like a premium fashion brand?
+2. Is the hero impressive?
+3. Does the typography feel intentional?
+4. Does the 3D experience feel premium?
+5. Are animations smooth?
+6. Is anything visually excessive?
+7. Is the website fast?
+8. Does mobile look excellent?
+9. Are there any broken links?
+10. Are there any console errors?
+11. Are there TypeScript errors?
+12. Does the build pass?
+13. Are images optimized?
+14. Are accessibility basics covered?
+15. Is the future e-commerce architecture clean?
+
+If the answer to any is no:
+FIX IT.
+
+==================================================
+49. IMPORTANT: DO NOT ASK ME FOR CONSTANT APPROVAL
+==================================================
+
+You have enough information to begin.
+
+Do not repeatedly ask:
+"What color should I use?"
+"What section should I add?"
+"Should I make it modern?"
+
+Use the creative direction above and make professional design decisions yourself.
+
+Only ask me if something is genuinely impossible without client-specific information.
+
+==================================================
+50. FINAL REQUIREMENT
+==================================================
+
+The final output should be a complete working website for:
+
+THE UNDERSTATED.
+
+It must be:
+
+- cinematic
+- premium
+- interactive
+- responsive
+- modern
+- fashion-oriented
+- 3D-enhanced
+- performance-conscious
+- accessible
+- SEO-ready
+- e-commerce-ready
+
+PHASE 1:
+Brand experience.
+
+PHASE 2:
+E-commerce activation when the client provides products.
+
+DO NOT give me only a design concept.
+
+DO NOT give me only code snippets.
+
+BUILD THE ACTUAL WEBSITE.
+
+Run it.
+Test it.
+Fix it.
+Polish it.
+
+The final result should be ready for me to review and show to the client.

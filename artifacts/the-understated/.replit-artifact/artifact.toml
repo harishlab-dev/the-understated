@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "The Understated"
+description = "A cinematic Phase 1 brand experience for The Understated, a premium Indian streetwear label centered on quiet confidence, editorial storytelling, collections, lookbook, community, and future-ready commerce architecture."
+version = "1.0.0"
+id = "artifacts/the-understated"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25002
+
+[services.development]
+run = "pnpm --filter @workspace/the-understated run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/the-understated", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/the-understated/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25002"
+BASE_PATH = "/"
