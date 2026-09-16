@@ -58,7 +58,7 @@ type CinematicVideoProps = {
 };
 
 function CinematicVideo({ desktopSource, mobileSource, poster, title }: CinematicVideoProps) {
-  return <div className="cinematic-video" aria-label={title}>
+  return <div className="cinematic-video" aria-label={title} data-cursor="PLAY">
     {desktopSource && <video className="video-desktop" src={desktopSource} poster={poster} autoPlay muted loop playsInline preload="none" />}
     {mobileSource && <video className="video-mobile" src={mobileSource} poster={poster} autoPlay muted loop playsInline preload="none" />}
     <img src={poster} alt={title} loading="lazy" />
@@ -153,6 +153,21 @@ function Shell({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [cursorLabel, setCursorLabel] = useState('');
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const touch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+    if (reduced || touch) return;
+    const move = (event: PointerEvent) => {
+      const target = event.target as HTMLElement;
+      const owner = target.closest<HTMLElement>('[data-cursor]');
+      setCursorLabel(owner?.dataset.cursor ?? '');
+      document.documentElement.style.setProperty('--cursor-x', `${event.clientX}px`);
+      document.documentElement.style.setProperty('--cursor-y', `${event.clientY}px`);
+    };
+    window.addEventListener('pointermove', move, { passive: true });
+    return () => window.removeEventListener('pointermove', move);
+  }, []);
   return (
     <div className="site-shell">
       <Header onSearch={() => setSearchOpen(true)} onMenu={() => setMenuOpen(true)} onCart={() => setCartOpen(true)} />
@@ -161,6 +176,7 @@ function Shell({ children }: { children: ReactNode }) {
       {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
       {menuOpen && <MobileMenu onClose={() => setMenuOpen(false)} />}
       {cartOpen && <CartDrawer onClose={() => setCartOpen(false)} />}
+      <div className={`context-cursor ${cursorLabel ? 'context-cursor-visible' : ''}`} aria-hidden="true"><span>{cursorLabel}</span></div>
     </div>
   );
 }
@@ -203,45 +219,51 @@ function Hero() {
   const [intro, setIntro] = useState(true);
   useEffect(() => { const timer = window.setTimeout(() => setIntro(false), 1500); return () => window.clearTimeout(timer); }, []);
   return <section className={`hero ${intro ? 'hero-intro-active' : ''}`}>
-    <div className="hero-image" style={{ backgroundImage: `url(${assets.hero})` }} />
+    <div className="hero-image" style={{ backgroundImage: `url(${assets.hero})` }} aria-hidden="true" />
     <div className="hero-shade" />
     <div className="hero-intro" aria-hidden={!intro}><span>THE</span><strong>UNDERSTATED</strong><small>Luxury, Without the Noise.</small></div>
-    <div className="hero-copy"><p className="eyebrow light">EST. / INDIA / 001</p><h1>THE<br /><em>UNDERSTATED.</em></h1><p className="hero-sub">Contemporary essentials, culture-driven pieces and modern streetwear for those who do not need to be loud to stand out.</p><div className="button-row"><Link href="/collections" className="button button-light" data-testid="link-explore-world">Explore the world <ArrowUpRight size={15} /></Link><Link href="/about" className="button button-ghost-light" data-testid="link-our-story">Our story</Link></div></div>
+    <div className="hero-copy">
+      <p className="eyebrow light hero-kicker">ACT I / THE SILENCE <span>INDIA — 2026</span></p>
+      <h1><span>THE</span><em>UNDER-</em><strong>STATED.</strong></h1>
+      <p className="hero-sub">Contemporary essentials, culture-driven pieces and modern streetwear for those who do not need to be loud to stand out.</p>
+      <div className="hero-entry"><Link href="/collections" className="text-link light-link" data-cursor="GO" data-testid="link-explore-world">Enter the worlds <ArrowUpRight size={15} /></Link><span className="hero-film-note">A FILM IN SIX ACTS<br />FRAME 01 / 13</span></div>
+    </div>
+    <div className="hero-vertical">LUXURY, WITHOUT THE NOISE.</div>
     <div className="hero-bottom"><span>Scroll to enter</span><span className="scroll-line" /><span>01—13</span></div>
   </section>;
 }
 
 function Statement() {
-  return <section className="statement section-pad"><div className="statement-number">02 / 13</div><div className="statement-copy"><p className="eyebrow">A point of view</p><h2>LESS<br /><em>NOISE.</em><br />MORE <span>YOU.</span></h2><p className="body-copy">Fashion does not have to shout to make an impression. It only has to mean something to you.</p></div></section>;
+  return <section className="statement section-pad"><div className="statement-number">ACT II<br />02 / 13</div><div className="statement-copy"><p className="eyebrow">The presence / A point of view</p><h2>LESS<br /><em>NOISE.</em><br />MORE <span>YOU.</span></h2><p className="body-copy">Fashion does not have to shout to make an impression. It only has to mean something to you.</p></div><span className="statement-side-note">A QUIET<br />POSITION</span></section>;
 }
 
 function Campaign() {
-  return <section className="campaign section-dark"><div className="campaign-media media-frame"><img src={assets.campaign} alt="Folds of black fabric and a sculptural object in a stark studio" loading="lazy" /><div className="media-grain" /></div><div className="campaign-content"><p className="eyebrow light">Campaign / 01</p><h2>The quiet<br /><i>city.</i></h2><p>For the spaces between one place and the next. A study in movement, shadow and the clothes that keep up.</p><Link href="/lookbook" className="text-link light-link">Discover the lookbook <ArrowUpRight size={15} /></Link></div><span className="campaign-caption">Poster fallback / film coming soon</span></section>;
+  return <section className="campaign section-dark"><div className="campaign-media media-frame" data-cursor="VIEW"><img src={assets.campaign} alt="Folds of black fabric and a sculptural object in a stark studio" loading="lazy" /><div className="media-grain" /><span className="campaign-freeze">FREEZE FRAME<br />04:12:26</span></div><div className="campaign-content"><p className="eyebrow light">ACT III / THE CULTURE</p><h2>The quiet<br /><i>city.</i></h2><p>For the spaces between one place and the next. A study in movement, shadow and the clothes that keep up.</p><Link href="/lookbook" className="text-link light-link" data-cursor="GO">Discover the lookbook <ArrowUpRight size={15} /></Link></div><span className="campaign-caption">DROP 001 / POSTER STUDY / INDIA</span></section>;
 }
 
 function Worlds() {
-  return <section className="worlds section-pad"><div className="section-head"><div><p className="eyebrow">03 / Four worlds</p><h2>Find your<br /><em>frequency.</em></h2></div><p className="body-copy">A wardrobe with room for every version of you. Start where it feels right.</p></div><div className="world-grid">{collections.map((item) => <Link href={`/collections/${item.slug}`} className={`world-card tone-${item.tone}`} key={item.slug} data-testid={`card-world-${item.slug}`}><img src={item.image} alt={`${item.title} editorial placeholder`} loading="lazy" /><div className="world-overlay" /><div className="world-meta"><span className="eyebrow">{item.number} / World</span><h3>{item.title}</h3><p>{item.description}</p><span className="world-cta">Explore <ArrowUpRight size={14} /></span></div></Link>)}</div></section>;
+  return <section className="worlds section-pad"><div className="section-head"><div><p className="eyebrow">ACT IV / THE EVERYDAY</p><h2>Find your<br /><em>frequency.</em></h2></div><p className="body-copy">A wardrobe with room for every version of you. Start where it feels right.</p></div><div className="world-grid">{collections.map((item) => <Link href={`/collections/${item.slug}`} className={`world-card tone-${item.tone}`} key={item.slug} data-cursor="ENTER" data-testid={`card-world-${item.slug}`}><img src={item.image} alt={`${item.title} editorial placeholder`} loading="lazy" /><div className="world-overlay" /><div className="world-meta"><span className="eyebrow">{item.number} / Collection world</span><h3>{item.title}</h3><p>{item.description}</p><span className="world-cta">Enter <ArrowUpRight size={14} /></span></div></Link>)}</div></section>;
 }
 
 function EditorialStory() {
-  return <section className="editorial-story section-pad"><div className="editorial-image image-tall"><img src={assets.city} alt="Figure crossing a wet concrete plaza at blue hour" loading="lazy" /></div><div className="editorial-copy"><p className="eyebrow">04 / The quiet city</p><h2>Fashion does not have to be loud to make an <em>impression.</em></h2><div className="editorial-rule" /><p className="body-copy">There is a certain confidence in choosing less. In keeping the detail that matters and leaving the rest behind.</p><Link href="/about" className="text-link">Read our point of view <ArrowUpRight size={14} /></Link></div><div className="editorial-mini"><img src={assets.fabric} alt="Abstract black fabric texture" loading="lazy" /><span>Character / in the details</span></div></section>;
+  return <section className="editorial-story section-pad"><div className="editorial-image image-tall" data-cursor="VIEW"><img src={assets.city} alt="Figure crossing a wet concrete plaza at blue hour" loading="lazy" /><span className="editorial-stamp">EDITORIAL 01<br />SHOT 04 / 12</span></div><div className="editorial-copy"><p className="eyebrow">ACT V / THE EVERYDAY</p><h2>Fashion does not have to be loud to make an <em>impression.</em></h2><div className="editorial-rule" /><p className="body-copy">There is a certain confidence in choosing less. In keeping the detail that matters and leaving the rest behind.</p><Link href="/about" className="text-link" data-cursor="GO">Read our point of view <ArrowUpRight size={14} /></Link></div><div className="editorial-mini"><img src={assets.fabric} alt="Abstract black fabric texture" loading="lazy" /><span>Character / in the details</span></div></section>;
 }
 
 function Manifesto() {
-  return <section className="manifesto section-dark"><div className="manifesto-top"><span className="eyebrow light">05 / Manifesto</span><span className="manifesto-side">For those who know.</span></div><h2>FASHION<br />DOES NOT HAVE<br />TO BE <em>LOUD.</em></h2><div className="manifesto-bottom"><p>It just has to<br /><strong>mean something.</strong></p><p className="manifesto-sign">Wear what speaks to you.<br /><span>— The Understated</span></p></div></section>;
+  return <section className="manifesto section-dark"><div className="manifesto-top"><span className="eyebrow light">ACT VI / THE STATEMENT</span><span className="manifesto-side">For those who know.</span></div><h2>FASHION<br />DOES NOT HAVE<br />TO BE <em>LOUD.</em></h2><div className="manifesto-bottom"><p>It just has to<br /><strong>mean something.</strong></p><p className="manifesto-sign">Wear what speaks to you.<br /><span>— The Understated</span></p></div></section>;
 }
 
 function Sculpture() {
-  return <section className="sculpture section-pad"><div className="sculpture-copy"><p className="eyebrow">06 / A lighter kind of statement</p><h2>Weightless<br /><em>presence.</em></h2><p className="body-copy">A quiet study in form. Move with your cursor or let the shape hold the room.</p></div><div className="sculpture-stage" aria-label="Abstract fabric sculpture, decorative"><div className="sculpture-orbit orbit-one" /><div className="sculpture-orbit orbit-two" /><div className="sculpture-form"><span>TU</span></div><div className="sculpture-caption">Interactive study / 001</div></div></section>;
+  return <section className="sculpture section-pad"><div className="sculpture-copy"><p className="eyebrow">FORM STUDY / BETWEEN ACTS</p><h2>Weightless<br /><em>presence.</em></h2><p className="body-copy">A quiet study in form. Move with your cursor or let the shape hold the room.</p></div><div className="sculpture-stage" aria-label="Abstract fabric sculpture, decorative"><div className="sculpture-orbit orbit-one" /><div className="sculpture-orbit orbit-two" /><div className="sculpture-form"><span>TU</span></div><div className="sculpture-caption">SUSPENDED BLACK FABRIC / 001</div></div></section>;
 }
 
 function LookbookPreview() {
   const looks = [{ number: '01', title: 'The everyday', image: assets.hero }, { number: '02', title: 'After dark', image: assets.city }, { number: '03', title: 'Culture', image: assets.campaign }];
-  return <section className="lookbook-preview section-dark"><div className="lookbook-head"><div><p className="eyebrow light">07 / Lookbook</p><h2>Ways of<br /><em>wearing.</em></h2></div><Link href="/lookbook" className="text-link light-link">View all stories <ArrowUpRight size={15} /></Link></div><div className="lookbook-strip">{looks.map((look) => <Link href="/lookbook" className="look-card" key={look.number}><img src={look.image} alt={`${look.title} lookbook editorial`} loading="lazy" /><div className="look-overlay" /><div className="look-meta"><span>{look.number}</span><h3>{look.title}</h3><ArrowUpRight size={17} /></div></Link>)}</div></section>;
+  return <section className="lookbook-preview section-dark"><div className="lookbook-head"><div><p className="eyebrow light">EDITORIAL 01 / COLLECTION 001</p><h2>Ways of<br /><em>wearing.</em></h2></div><Link href="/lookbook" className="text-link light-link" data-cursor="GO">View all stories <ArrowUpRight size={15} /></Link></div><div className="lookbook-strip">{looks.map((look, index) => <Link href="/lookbook" className="look-card" data-cursor="VIEW" key={look.number}><img src={look.image} alt={`${look.title} lookbook editorial`} loading="lazy" /><div className="look-overlay" /><div className="look-meta"><span>{look.number} / 0{index + 4}</span><h3>{look.title}</h3><ArrowUpRight size={17} /></div></Link>)}</div></section>;
 }
 
 function DropBanner() {
-  return <section className="drop-banner"><div><p className="eyebrow">08 / The next chapter</p><h2>The first drop<br /><em>is coming.</em></h2><p>Something worth waiting for.</p></div><div className="button-row"><Link href="/coming-soon" className="button button-dark">Join the world <ArrowUpRight size={15} /></Link><a href={socials[0][1]} target="_blank" rel="noreferrer" className="button button-outline">Follow the drop</a></div></section>;
+  return <section className="drop-banner"><div><p className="eyebrow">ACT VII / THE DROP — DROP 001</p><h2>The first drop<br /><em>is coming.</em></h2><p>Something worth waiting for.</p></div><div className="button-row"><Link href="/coming-soon" className="button button-dark" data-cursor="GO">Join the world <ArrowUpRight size={15} /></Link><a href={socials[0][1]} target="_blank" rel="noreferrer" className="button button-outline" data-cursor="GO">Follow the drop</a></div></section>;
 }
 
 function Community() {
@@ -268,12 +290,12 @@ function Collections() {
 
 function CollectionPage({ slug }: { slug: string }) {
   const item = collections.find((collection) => collection.slug === slug) ?? collections[0];
-  return <><Meta title={item.title} description={`${item.title} — a world by The Understated.`} /><section className={`collection-hero tone-${item.tone}`}><img src={item.image} alt={`${item.title} editorial placeholder`} /><div className="collection-hero-overlay" /><div className="collection-hero-copy"><p className="eyebrow light">{item.number} / Collection world</p><h1>{item.title}</h1><p>{item.description}</p></div><span className="collection-hero-note">Catalogue preview / coming soon</span></section><section className="collection-empty section-pad"><div><p className="eyebrow">A considered wardrobe</p><h2>Nothing to add<br /><em>just yet.</em></h2></div><div><p className="body-copy">This world is being built with the same care as the pieces inside it. The first drop will arrive here when it is ready.</p><Link href="/coming-soon" className="button button-dark">Stay close <ArrowUpRight size={15} /></Link></div></section><section className="collection-quote"><p>“Wear what<br /><em>speaks to you.</em>”</p></section></>;
+  return <><Meta title={item.title} description={`${item.title} — a world by The Understated.`} /><section className={`collection-hero tone-${item.tone}`}><img src={item.image} alt={`${item.title} editorial placeholder`} /><div className="collection-hero-overlay" /><div className="collection-hero-copy"><p className="eyebrow light">{item.number} / Collection world — INDIA / 2026</p><h1>{item.title}</h1><p>{item.description}</p></div><span className="collection-hero-note">Catalogue preview / coming soon</span></section><section className="collection-empty section-pad"><div><p className="eyebrow">A considered wardrobe</p><h2>Nothing to add<br /><em>just yet.</em></h2></div><div><p className="body-copy">This world is being built with the same care as the pieces inside it. The first drop will arrive here when it is ready.</p><Link href="/coming-soon" className="button button-dark" data-cursor="GO">Stay close <ArrowUpRight size={15} /></Link></div></section><section className="collection-quote"><p>“Wear what<br /><em>speaks to you.</em>”</p></section></>;
 }
 
 function Lookbook() {
   const looks = [{ number: '01', title: 'The everyday', body: 'The pieces that earn their place.', image: assets.hero }, { number: '02', title: 'After dark', body: 'A little more shadow. A little less noise.', image: assets.city }, { number: '03', title: 'Culture', body: 'Stories translated into something you can wear.', image: assets.campaign }, { number: '04', title: 'The statement', body: 'For when quiet does not mean invisible.', image: assets.fabric }];
-  return <><Meta title="Lookbook" /><PageIntro eyebrow="Lookbook / 2026" title="Ways of" italic="wearing." description="A visual record of the worlds we are building." /><section className="lookbook-page">{looks.map((look, index) => <article className={`lookbook-row ${index % 2 ? 'lookbook-row-reverse' : ''}`} key={look.number}><div className="lookbook-large"><img src={look.image} alt={`${look.title} lookbook`} loading="lazy" /><span>{look.number}</span></div><div className="lookbook-row-copy"><p className="eyebrow">Look {look.number}</p><h2>{look.title}</h2><p>{look.body}</p><Link href="/coming-soon" className="text-link">Enter the world <ArrowUpRight size={14} /></Link></div></article>)}</section></>;
+  return <><Meta title="Lookbook" /><PageIntro eyebrow="Lookbook / 2026" title="Ways of" italic="wearing." description="A visual record of the worlds we are building." /><section className="lookbook-page">{looks.map((look, index) => <article className={`lookbook-row ${index % 2 ? 'lookbook-row-reverse' : ''}`} key={look.number}><div className="lookbook-large" data-cursor="VIEW"><img src={look.image} alt={`${look.title} lookbook`} loading="lazy" /><span>{look.number} / SHOT 0{index + 4} / 12</span></div><div className="lookbook-row-copy"><p className="eyebrow">EDITORIAL 0{index + 1} / COLLECTION 001</p><h2>{look.title}</h2><p>{look.body}</p><Link href="/coming-soon" className="text-link" data-cursor="GO">Enter the world <ArrowUpRight size={14} /></Link></div></article>)}</section></>;
 }
 
 function Contact() {
