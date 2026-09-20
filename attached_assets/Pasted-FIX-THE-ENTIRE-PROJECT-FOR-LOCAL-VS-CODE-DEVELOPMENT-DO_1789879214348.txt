@@ -1,0 +1,269 @@
+FIX THE ENTIRE PROJECT FOR LOCAL VS CODE DEVELOPMENT — DO NOT REBUILD OR REDESIGN THE WEBSITE.
+
+I have exported this Replit project and need the exact same website to run reliably on my local Mac in VS Code.
+
+Project:
+THE Understated
+Workspace:
+Fashion-Creative-Studio
+Website:
+artifacts/the-understated
+
+CURRENT PROBLEM:
+The project installs with pnpm, but the local Vite server fails because the generated Replit configuration assumes Replit-only environment variables and native dependencies.
+
+I encountered these errors:
+
+1. Rollup:
+Cannot find module @rollup/rollup-darwin-arm64
+
+2. esbuild:
+The package "@esbuild/darwin-arm64" could not be found
+
+3. Tailwind:
+Cannot find native binding from @tailwindcss/oxide
+
+4. After fixing the native dependencies, Vite fails with:
+PORT environment variable is required but was not provided.
+
+5. When PORT is supplied manually, Vite then fails with:
+BASE_PATH environment variable is required but was not provided.
+
+The current vite.config.ts contains Replit-specific mandatory checks like:
+
+const rawPort = process.env.PORT;
+
+if (!rawPort) {
+  throw new Error('PORT environment variable is required but was not provided.');
+}
+
+const basePath = process.env.BASE_PATH;
+
+if (!basePath) {
+  throw new Error('BASE_PATH environment variable is required but was not provided.');
+}
+
+OBJECTIVE:
+
+Make the project properly portable so it works in BOTH environments:
+
+A) Replit
+B) Local macOS Apple Silicon / VS Code
+
+Do NOT ask me to manually fix individual errors one by one.
+
+Do NOT redesign the website.
+Do NOT remove any existing website functionality.
+Do NOT replace the project with a simpler implementation.
+Do NOT create a new project.
+Do NOT downgrade the framework unnecessarily.
+Do NOT switch from pnpm to npm.
+Do NOT delete the existing workspace architecture.
+
+TECHNICAL REQUIREMENTS:
+
+1. Inspect the ENTIRE monorepo before making changes.
+
+Check:
+
+- package.json
+- pnpm-workspace.yaml
+- pnpm-lock.yaml
+- artifacts/the-understated/package.json
+- artifacts/the-understated/vite.config.ts
+- Tailwind configuration
+- TypeScript configuration
+- Vite configuration
+- React configuration
+- all workspace dependencies
+- Replit-specific plugins/configuration
+- environment-variable usage
+- build scripts
+- dev scripts
+
+2. Fix native dependencies correctly for macOS Apple Silicon.
+
+The current machine is:
+
+macOS
+Apple Silicon / arm64
+Node.js 20.20.2
+pnpm 12.4.2
+
+Ensure the dependency graph correctly installs the required platform-specific packages for:
+
+- Rollup
+- esbuild
+- Tailwind CSS Oxide
+
+Do NOT solve this by randomly adding native packages unless they are actually required by the dependency graph.
+
+Prefer the correct package-manager/workspace configuration and optionalDependencies behavior.
+
+3. Fix vite.config.ts properly.
+
+The local developer must NOT be required to manually provide Replit-only variables.
+
+For local development:
+
+PORT should default to 5173.
+
+BASE_PATH should default to "/".
+
+For Replit:
+
+continue respecting the environment variables when they are provided.
+
+For example, use safe defaults rather than throwing when PORT or BASE_PATH are absent.
+
+Keep Replit-specific plugins conditional on REPL_ID as they currently are.
+
+4. Make sure the dev command works from the workspace root.
+
+I want this to work:
+
+pnpm --dir artifacts/the-understated dev
+
+and ideally also provide a convenient root-level development command if appropriate.
+
+5. Make sure the production build works:
+
+pnpm --dir artifacts/the-understated build
+
+6. Make sure TypeScript works:
+
+pnpm --dir artifacts/the-understated typecheck
+
+7. Inspect for any other Replit-only assumptions.
+
+Search the entire project for things such as:
+
+process.env.PORT
+process.env.BASE_PATH
+REPL_ID
+Replit plugins
+Replit-specific paths
+Replit-specific runtime assumptions
+hardcoded server URLs
+hardcoded development URLs
+environment variables that are mandatory only on Replit
+
+Make local defaults where appropriate without breaking Replit.
+
+8. Check the workspace dependency graph.
+
+Do not modify unrelated workspace packages unless necessary.
+
+The website must continue using the existing shared packages.
+
+9. Preserve all existing UI and functionality.
+
+The website's:
+
+- design
+- animations
+- typography
+- 3D experience
+- responsive behavior
+- routing
+- components
+- collections
+- lookbook
+- navigation
+- assets
+- styling
+- React structure
+
+must remain intact.
+
+This task is ONLY about making the generated project technically correct and portable.
+
+10. Actually TEST the fixes.
+
+Do not tell me the project is fixed just because files were changed.
+
+Run:
+
+pnpm install
+
+then:
+
+pnpm --dir artifacts/the-understated typecheck
+
+then:
+
+pnpm --dir artifacts/the-understated build
+
+then start:
+
+pnpm --dir artifacts/the-understated dev
+
+Verify that Vite actually starts successfully and reports a localhost URL.
+
+If the dev server starts, verify that the application responds successfully at the local URL.
+
+11. Check for runtime/browser errors.
+
+After the server starts, inspect the application for:
+
+- module errors
+- missing assets
+- failed imports
+- React runtime errors
+- routing errors
+- CSS/Tailwind errors
+- Three.js/WebGL errors
+- console errors
+- blank page issues
+
+Fix genuine errors you discover.
+
+12. Do not stop after the first successful command.
+
+The goal is:
+
+INSTALL → TYPECHECK → BUILD → DEV SERVER → BROWSER LOAD
+
+all working.
+
+13. Do not make me guess environment variables.
+
+If the application genuinely needs environment variables beyond PORT and BASE_PATH, inspect the source and create/document the appropriate local .env.example file with safe non-secret defaults where possible.
+
+Do not invent API keys, credentials, database URLs, payment credentials, or other secrets.
+
+14. Preserve production safety.
+
+Do not hardcode secrets.
+Do not commit credentials.
+Do not expose private API keys to the frontend.
+
+FINAL REQUIREMENT:
+
+Do all investigation and fixes yourself.
+
+Do not merely give me terminal commands.
+
+Do not say "this should work."
+
+Actually run the relevant checks and continue fixing until:
+
+1. pnpm install succeeds
+2. typecheck succeeds
+3. production build succeeds
+4. local Vite dev server starts
+5. localhost loads the THE Understated website
+6. there are no blocking runtime errors
+
+At the end, give me ONLY:
+
+- what you fixed
+- files changed
+- exact command to run the website locally
+- exact localhost URL
+- whether typecheck passed
+- whether build passed
+- whether the browser loaded successfully
+
+IMPORTANT:
+Do not redesign or alter the creative direction of THE Understated website during this task. This is strictly a technical portability, dependency, configuration, build, and local-development fix.
