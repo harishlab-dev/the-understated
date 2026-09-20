@@ -68,12 +68,6 @@ catalog:
 
 autoInstallPeers: false
 
-onlyBuiltDependencies:
-  - '@swc/core'
-  - esbuild
-  - msw
-  - unrs-resolver
-
 overrides:
   "lightningcss>lightningcss-freebsd-x64": "-"
   "lightningcss>lightningcss-linux-arm-gnueabihf": "-"
@@ -129,4 +123,4 @@ overrides:
   js-yaml: '4.3.2'
 
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: false
